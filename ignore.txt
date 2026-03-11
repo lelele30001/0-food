@@ -1,0 +1,17 @@
+# 重命名错误的.gitignore（备份）
+ren .gitignore .gitignore.bak
+
+# 重新创建正确的.gitignore（复制以下内容）
+echo "# 后端" > .gitignore
+echo "target/" >> .gitignore
+echo ".idea/" >> .gitignore
+echo "*.iml" >> .gitignore
+echo "logs/" >> .gitignore
+echo "src/main/resources/application-dev.yml" >> .gitignore
+echo "# 前端" >> .gitignore
+echo "node_modules/" >> .gitignore
+echo "dist/" >> .gitignore
+echo ".env.local" >> .gitignore
+echo ".vscode/" >> .gitignore
+echo "# 通用" >> .gitignore
+echo ".DS_Store" >> .gitignore
