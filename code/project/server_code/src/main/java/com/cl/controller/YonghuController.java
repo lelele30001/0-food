@@ -156,8 +156,7 @@ public class YonghuController {
      */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id) {
-        YonghuEntity yonghu = yonghuService.selectById(id);
-        yonghu = yonghuService.selectView(new EntityWrapper<YonghuEntity>().eq("id", id));
+        YonghuView yonghu = yonghuService.selectView(new EntityWrapper<YonghuEntity>().eq("id", id));
         return R.ok().put("data", yonghu);
     }
 

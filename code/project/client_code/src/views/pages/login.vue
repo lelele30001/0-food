@@ -2,7 +2,7 @@
   <div>
     <div class="login_view">
       <div class="outTitle_view">
-        <div class="outTilte">美食推荐分享系统登录</div>
+        <div class="outTilte">健身人群的膳食分享系统登录</div>
       </div>
       <el-form :model="loginForm" class="login_form">
         <div class="list_item" v-if="loginType == 1">

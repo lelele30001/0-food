@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="index_top">
-      <div class="index_top_title"><span>美食推荐分享系统</span></div>
+      <div class="index_top_title"><span>健身人群的膳食分享系统</span></div>
       <div class="index_top_right">
         <div class="toBack">
           <el-button @click="toBack"> 系统后台 </el-button>
