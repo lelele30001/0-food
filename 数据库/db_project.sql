@@ -740,3 +740,12 @@ TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-02-28  8:45:19
+
+-- 向 yonghu 表添加档案管理相关字段
+ALTER TABLE `yonghu`
+ADD COLUMN `shengao` DOUBLE DEFAULT NULL COMMENT '身高(cm)',
+ADD COLUMN `tizhong` DOUBLE DEFAULT NULL COMMENT '体重(kg)',
+ADD COLUMN `nianling` INT DEFAULT NULL COMMENT '年龄',
+ADD COLUMN `jianshenmubiao` VARCHAR(200) DEFAULT NULL COMMENT '健身目标',
+ADD COLUMN `yinsjijin` VARCHAR(255) DEFAULT NULL COMMENT '饮食禁忌',
+ADD COLUMN `meirireliang` DOUBLE DEFAULT NULL COMMENT '每日热量需求(kcal)';

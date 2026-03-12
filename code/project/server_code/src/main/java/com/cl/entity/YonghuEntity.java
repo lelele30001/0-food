@@ -1,5 +1,6 @@
 package com.cl.entity;
 
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -67,6 +68,36 @@ public class YonghuEntity<T> implements Serializable {
      */
 
     private String youxiang;
+    /**
+     * 身高(cm)
+     */
+    @TableField("shengao")
+    private Double shengao;
+    /**
+     * 体重(kg)
+     */
+    @TableField("tizhong")
+    private Double tizhong;
+    /**
+     * 年龄
+     */
+    @TableField("nianling")
+    private Integer nianling;
+    /**
+     * 健身目标
+     */
+    @TableField("jianshenmubiao")
+    private String jianshenmubiao;
+    /**
+     * 饮食禁忌
+     */
+    @TableField("yinsjijin")
+    private String yinsjijin;
+    /**
+     * 每日热量需求(kcal)
+     */
+    @TableField("meirireliang")
+    private Double meirireliang;
     @JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat
     private Date addtime;
@@ -211,6 +242,90 @@ public class YonghuEntity<T> implements Serializable {
      */
     public void setYouxiang(String youxiang) {
         this.youxiang = youxiang;
+    }
+
+    /**
+     * 获取：身高(cm)
+     */
+    public Double getShengao() {
+        return shengao;
+    }
+
+    /**
+     * 设置：身高(cm)
+     */
+    public void setShengao(Double shengao) {
+        this.shengao = shengao;
+    }
+
+    /**
+     * 获取：体重(kg)
+     */
+    public Double getTizhong() {
+        return tizhong;
+    }
+
+    /**
+     * 设置：体重(kg)
+     */
+    public void setTizhong(Double tizhong) {
+        this.tizhong = tizhong;
+    }
+
+    /**
+     * 获取：年龄
+     */
+    public Integer getNianling() {
+        return nianling;
+    }
+
+    /**
+     * 设置：年龄
+     */
+    public void setNianling(Integer nianling) {
+        this.nianling = nianling;
+    }
+
+    /**
+     * 获取：健身目标
+     */
+    public String getJianshenmubiao() {
+        return jianshenmubiao;
+    }
+
+    /**
+     * 设置：健身目标
+     */
+    public void setJianshenmubiao(String jianshenmubiao) {
+        this.jianshenmubiao = jianshenmubiao;
+    }
+
+    /**
+     * 获取：饮食禁忌
+     */
+    public String getYinsjijin() {
+        return yinsjijin;
+    }
+
+    /**
+     * 设置：饮食禁忌
+     */
+    public void setYinsjijin(String yinsjijin) {
+        this.yinsjijin = yinsjijin;
+    }
+
+    /**
+     * 获取：每日热量需求(kcal)
+     */
+    public Double getMeirireliang() {
+        return meirireliang;
+    }
+
+    /**
+     * 设置：每日热量需求(kcal)
+     */
+    public void setMeirireliang(Double meirireliang) {
+        this.meirireliang = meirireliang;
     }
 
 }
