@@ -165,7 +165,10 @@ public class ForumController {
     @RequestMapping("/add")
     public R add(@RequestBody ForumEntity forum, HttpServletRequest request) {
         //ValidatorUtils.validateEntity(forum);
-        forum.setUserid((Long) request.getSession().getAttribute("userId"));
+        // 如果前端传递了userid，使用前端传递的值
+        if (forum.getUserid() == null || forum.getUserid() == 0) {
+            forum.setUserid((Long) request.getSession().getAttribute("userId"));
+        }
         forumService.insert(forum);
         return R.ok();
     }

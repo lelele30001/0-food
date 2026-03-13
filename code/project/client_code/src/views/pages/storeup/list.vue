@@ -148,7 +148,13 @@
 		})
 	}
 	const detailClick = (item) => {
-		router.push(`${item.tablename}Detail?id=${item.refid}`)
+		if (item.tablename === 'forum') {
+			// 跳转到帖子详情
+			router.push(`/index/forumList?detailId=${item.refid}`)
+		} else {
+			// 其他类型的收藏
+			router.push(`${item.tablename}Detail?id=${item.refid}`)
+		}
 	}
     const delClick = (item)=>{
         context.$confirm('确定要删除该记录吗？','提示').then(()=>{

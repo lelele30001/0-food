@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cl.dao.RecipeDao" >
+  <resultMap id="BaseResultMap" type="com.cl.entity.RecipeEntity" >
+    <id column="id" property="id" />
+    <result column="title" property="title" />
+    <result column="description" property="description" />
+    <result column="cover_image" property="coverImage" />
+    <result column="fitness_goal" property="fitnessGoal" />
+    <result column="dietary_restrictions" property="dietaryRestrictions" />
+    <result column="meal_scene" property="mealScene" />
+    <result column="total_calories" property="totalCalories" />
+    <result column="user_id" property="userId" />
+    <result column="status" property="status" />
+    <result column="create_time" property="createTime" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, title, description, cover_image, fitness_goal, dietary_restrictions, meal_scene, total_calories, user_id, status, create_time
+  </sql>
+  
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from recipe
+    where id = #{id}
+  </select>
+  
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from recipe
+    where user_id = #{userId}
+    order by create_time desc
+  </select>
+  
+  <select id="selectAllPublic" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from recipe
+    where status = '已发布'
+    order by create_time desc
+  </select>
+</mapper>
